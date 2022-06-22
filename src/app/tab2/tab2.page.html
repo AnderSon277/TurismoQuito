@@ -1,17 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Geolocalización </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Tab 2 </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item>
+      <ion-select
+        placeholder="Seleccione alguna opción"
+        (ionChange)="handleChange($event)"
+        (ionCancel)="pushLog('ionCancel fired')"
+        (ionDismiss)="pushLog('ionDismiss fired')"
+      >
+        <ion-select-option value="restarantes">Restaurantes</ion-select-option>
+        <ion-select-option value="iglesias">Iglesias</ion-select-option>
+        <ion-select-option value="parques">Parques</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="ion-padding">
+    <p *ngFor="let log of logs">{{ log }}</p>
+  </div>
+
+  <app-explore-container
+    name="Qué deseas visitar hoy ?"
+  ></app-explore-container>
 </ion-content>
