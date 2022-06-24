@@ -29,6 +29,15 @@
     <p *ngFor="let log of logs">{{ log }}</p>
   </div>
 
+  <ion-item (click)="openMap()">
+    <ion-label class="normal"> Ubicación </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
   <app-explore-container
     name="Qué deseas visitar hoy ?"
   ></app-explore-container>
