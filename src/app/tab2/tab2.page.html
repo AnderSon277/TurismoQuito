@@ -5,40 +5,53 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2 </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-list>
+  <form [formGroup]="credentialForm">
     <ion-item>
-      <ion-select
-        placeholder="Seleccione alguna opción"
-        (ionChange)="handleChange($event)"
-        (ionCancel)="pushLog('ionCancel fired')"
-        (ionDismiss)="pushLog('ionDismiss fired')"
-      >
-        <ion-select-option value="restarantes">Restaurantes</ion-select-option>
-        <ion-select-option value="iglesias">Iglesias</ion-select-option>
-        <ion-select-option value="parques">Parques</ion-select-option>
-      </ion-select>
+      <ion-input
+        placeholder="Nombre"
+        formControlName="name"
+        autofocus="true"
+        clearInput="true"
+      ></ion-input>
     </ion-item>
-  </ion-list>
-  <div class="ion-padding">
-    <p *ngFor="let log of logs">{{ log }}</p>
-  </div>
 
-  <ion-item (click)="openMap()">
-    <ion-label class="normal"> Ubicación </ion-label>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Descripción"
+        formControlName="description"
+        clearInput="true"
+      ></ion-input>
+    </ion-item>
 
-  <app-explore-container
-    name="Qué deseas visitar hoy ?"
-  ></app-explore-container>
+    <ion-list>
+      <ion-item>
+        <ion-select
+          placeholder="Seleccione alguna categoría"
+          formControlName="type"
+          (ionChange)="handleChange($event)"
+          (ionCancel)="pushLog('ionCancel fired')"
+          (ionDismiss)="pushLog('ionDismiss fired')"
+        >
+          <ion-select-option value="restaurantes"
+            >Restaurantes</ion-select-option
+          >
+          <ion-select-option value="iglesias">Iglesias</ion-select-option>
+          <ion-select-option value="parques">Parques</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-item (click)="addUbication()" formControlName="ubication">
+      <ion-label class="normal"> Ubicación </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </form>
+
+  <ion-button (click)="savePlace()" expand="full" color="secondary"
+    >ENVIAR</ion-button
+  >
 </ion-content>

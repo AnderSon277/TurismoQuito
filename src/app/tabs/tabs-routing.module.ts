@@ -20,13 +20,11 @@ const routes: Routes = [
       {
         path: 'tab3',
         loadChildren: () =>
-          import('../googlemaps/googlemaps.module').then(
-            (m) => m.GooglemapsModule
-          ),
+          import('../tab3/tab3.module').then((m) => m.Tab3PageModule),
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tab2',
         pathMatch: 'full',
       },
     ],

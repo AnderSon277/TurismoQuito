@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "turismoquito-8e09b": {
+      "hosting": {
+        "app": [
+          "turismoquito-8e09b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "turismoquito-8e09b"
+  }
+}
