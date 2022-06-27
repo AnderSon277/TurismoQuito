@@ -144,5 +144,6 @@ export class GooglemapsComponent implements OnInit {
   aceptar() {
     console.log('click aceptar -> ', this.positionSet);
     this.modalController.dismiss({ pos: this.positionSet });
+    return this.positionSet;
   }
 }

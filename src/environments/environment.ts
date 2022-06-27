@@ -8,14 +8,13 @@ export const environment = {
   ApiKeyGoogleMaps: 'AIzaSyA8iraM46fIMhqry2pzZ3rU7YLwunjGQLQ',
   production: false,
   firebase: {
-    projectId: 'turismoquito-8e09b',
-    appId: '1:51291906322:web:e280d58ae1f11543cc53cb',
-    storageBucket: 'turismoquito-8e09b.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyC_DvCL9DRHzT-QCPQHIa2BNIPTExP5AWU',
-    authDomain: 'turismoquito-8e09b.firebaseapp.com',
-    messagingSenderId: '51291906322',
-    measurementId: 'G-JWJQPMKFZV',
+    apiKey: "AIzaSyDhfbl5bQtd1HuMi5wD_fNervMuV5mxU-Y",
+    authDomain: "movilesapp2022.firebaseapp.com",
+    databaseURL: "https://movilesapp2022-default-rtdb.firebaseio.com",
+    projectId: "movilesapp2022",
+    storageBucket: "movilesapp2022.appspot.com",
+    messagingSenderId: "1054025814391",
+    appId: "1:1054025814391:web:02dde4e71dec0789525172"
   },
 };
 

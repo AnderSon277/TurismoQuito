@@ -23,7 +23,22 @@ export class Tab2Page implements OnInit {
   credentialForm: FormGroup;
 
   places: Place[] = [];
-  newPlace: Place;
+  newPlace: Place = {
+    name: '',
+    description: '',
+    type: '',
+    ubication: null
+  };
+
+ /* cliente: Cliente = {
+    uid: '',
+    email: '',
+    celular: '',
+    foto: '',
+    referencia: '',
+    nombre: '',
+    ubicacion: null,
+  };*/
 
   private path = 'Places/';
 
@@ -39,8 +54,8 @@ export class Tab2Page implements OnInit {
     this.credentialForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      // ubication: ['', [Validators.required]],
       type: ['', [Validators.required]],
+      ubication: ['', [Validators.required]],
     });
   }
 
@@ -67,12 +82,16 @@ export class Tab2Page implements OnInit {
 
   async savePlace() {
     const loading = await this.loadingController.create();
+    this.newPlace.name=this.credentialForm.value.name;
+    this.newPlace.description=this.credentialForm.value.description;
+    this.newPlace.type=this.credentialForm.value.type;
     await loading.present();
     this.firestoreService
-      .createDoc(this.credentialForm.value, this.path, '1')
+      .createDoc(this.newPlace, this.path)
       .then(
         () => {
-          loading.dismiss();
+          loading.dismiss()
+          console.log('new Place', this.newPlace);
         },
         async (err) => {
           loading.dismiss();
@@ -99,7 +118,7 @@ export class Tab2Page implements OnInit {
     if (data) {
       console.log('data -> ', data);
       this.newPlace.ubication = data.pos;
-      console.log('this.newPlace -> ', this.newPlace);
+      console.log('newPlace -> ', this.newPlace);
     }
   }
 
@@ -111,11 +130,11 @@ export class Tab2Page implements OnInit {
   get description() {
     return this.credentialForm.get('description');
   }
-  /*
+  
   get ubication() {
     return this.credentialForm.get('ubication');
   }
-*/
+
   get type() {
     return this.credentialForm.get('type');
   }

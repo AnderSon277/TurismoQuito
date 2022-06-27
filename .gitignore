@@ -12,11 +12,13 @@
 Thumbs.db
 UserInterfaceState.xcuserstate
 $RECYCLE.BIN/
+*environments
 
 *.log
 log.txt
 npm-debug.log*
 
+/environments
 /.angular
 /.idea
 /.ionic
@@ -30,7 +32,6 @@ npm-debug.log*
 /platforms
 /plugins
 /www
-/src/app/environments
 # Firebase
 .firebase
 *-debug.log

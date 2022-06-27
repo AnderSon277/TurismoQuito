@@ -41,11 +41,11 @@
       </ion-item>
     </ion-list>
 
-    <ion-item (click)="addUbication()" formControlName="ubication">
-      <ion-label class="normal"> Ubicación </ion-label>
+    <ion-item>
+      <ion-label class="normal" (click)="addUbication()" formControlName="ubication"> Ubicación </ion-label>
       <ion-buttons slot="end">
         <ion-button>
-          <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
+          <ion-icon slot="icon-only" color="danger" name="location" ></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>
