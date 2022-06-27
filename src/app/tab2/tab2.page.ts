@@ -22,23 +22,12 @@ let positionInput = {
 export class Tab2Page implements OnInit {
   credentialForm: FormGroup;
 
-  places: Place[] = [];
   newPlace: Place = {
     name: '',
     description: '',
     type: '',
-    ubication: null
+    ubication: null,
   };
-
- /* cliente: Cliente = {
-    uid: '',
-    email: '',
-    celular: '',
-    foto: '',
-    referencia: '',
-    nombre: '',
-    ubicacion: null,
-  };*/
 
   private path = 'Places/';
 
@@ -82,27 +71,31 @@ export class Tab2Page implements OnInit {
 
   async savePlace() {
     const loading = await this.loadingController.create();
-    this.newPlace.name=this.credentialForm.value.name;
-    this.newPlace.description=this.credentialForm.value.description;
-    this.newPlace.type=this.credentialForm.value.type;
+    this.newPlace.name = this.credentialForm.value.name;
+    this.newPlace.description = this.credentialForm.value.description;
+    this.newPlace.type = this.credentialForm.value.type;
     await loading.present();
-    this.firestoreService
-      .createDoc(this.newPlace, this.path)
-      .then(
-        () => {
-          loading.dismiss()
-          console.log('new Place', this.newPlace);
-        },
-        async (err) => {
-          loading.dismiss();
-          const alert = await this.alertController.create({
-            header: 'failed send the form',
-            message: err.message,
-            buttons: ['OK'],
-          });
-          await alert.present();
-        }
-      );
+    this.firestoreService.createDoc(this.newPlace, this.path).then(
+      async () => {
+        loading.dismiss();
+        console.log('new Place', this.newPlace);
+        const alert = await this.alertController.create({
+          header: 'Registro Guardado',
+          message: 'Su registro se ha guardado exitosamente',
+          buttons: ['OK'],
+        });
+        await alert.present();
+      },
+      async (err) => {
+        loading.dismiss();
+        const alert = await this.alertController.create({
+          header: 'failed send the form',
+          message: err.message,
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }
+    );
   }
 
   async addUbication() {
@@ -130,7 +123,7 @@ export class Tab2Page implements OnInit {
   get description() {
     return this.credentialForm.get('description');
   }
-  
+
   get ubication() {
     return this.credentialForm.get('ubication');
   }

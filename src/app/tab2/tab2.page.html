@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Geolocalización </ion-title>
+    <ion-title> Registrar sitio turístico </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -42,10 +42,10 @@
     </ion-list>
 
     <ion-item>
-      <ion-label class="normal" (click)="addUbication()" formControlName="ubication"> Ubicación </ion-label>
+      <ion-label class="normal"> Ubicación </ion-label>
       <ion-buttons slot="end">
-        <ion-button>
-          <ion-icon slot="icon-only" color="danger" name="location" ></ion-icon>
+        <ion-button ((click)="addDirection()" )>
+          <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>

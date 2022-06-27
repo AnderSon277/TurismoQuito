@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title> Tab 3 </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +11,38 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-list>
+    <ion-item>
+      <ion-select
+        placeholder="¿Qué deseas visitar?"
+        (ionChange)="handleChange($event)"
+        (ionCancel)="pushLog('ionCancel fired')"
+        (ionDismiss)="pushLog('ionDismiss fired')"
+      >
+        <ion-select-option value="restaurantes">Restaurantes</ion-select-option>
+        <ion-select-option value="iglesias">Iglesias</ion-select-option>
+        <ion-select-option value="parques">Parques</ion-select-option>
+        <ion-select-option value="todos">Todos</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="getPlaces()">
+    <ion-icon name="search-outline"></ion-icon>
+  </ion-button>
+
+  <ion-card *ngFor="let place of places">
+    <ion-card-header>
+      <ion-card-subtitle>Subtitle {{place.typr}}</ion-card-subtitle>
+      <ion-card-title>Card Title {{place.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... {{place.description}}
+    </ion-card-content>
+
+    <ion-item href="#">
+      <ion-icon name="trash-outline" slot="start"></ion-icon>
+      <ion-label>Card Link Item 2</ion-label>
+    </ion-item>
+  </ion-card>
 </ion-content>
