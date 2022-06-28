@@ -13,7 +13,7 @@ export class FirestoreService {
     return collection.doc().set(data);
   }
 
-  getCollection(path: string, type: string) {
+  getCollection<tipo>(path: string, type: string) {
     if (type === 'todos') {
       const collection = this.database.collection(path);
       return collection.valueChanges();

@@ -30,9 +30,12 @@ export class Tab3Page {
 
   async getPlaces() {
     const loading = await this.loadingController.create();
-    this.firestoreService.getCollection('Places/', this.tipo).subscribe(
+    this.firestoreService.getCollection<Place>('Places/', this.tipo).subscribe(
       (res) => {
         console.log('res', res);
+        if (Array.isArray(res)) {
+          this.places = res as Place[];
+        }
       },
       async (err) => {
         loading.dismiss();

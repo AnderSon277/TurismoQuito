@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Tab 3 </ion-title>
+    <ion-title> ¿Qué deseas visitar hoy ? </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -32,17 +32,15 @@
 
   <ion-card *ngFor="let place of places">
     <ion-card-header>
-      <ion-card-subtitle>Subtitle {{place.typr}}</ion-card-subtitle>
-      <ion-card-title>Card Title {{place.name}}</ion-card-title>
+      <ion-card-subtitle>Categoría: {{place.type}}</ion-card-subtitle>
+      <ion-card-title> {{place.name}} </ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
-      Keep close to Nature's heart... {{place.description}}
-    </ion-card-content>
+    <ion-card-content> {{place.description}} </ion-card-content>
 
     <ion-item href="#">
       <ion-icon name="trash-outline" slot="start"></ion-icon>
-      <ion-label>Card Link Item 2</ion-label>
+      <ion-label>Eliminar</ion-label>
     </ion-item>
   </ion-card>
 </ion-content>
