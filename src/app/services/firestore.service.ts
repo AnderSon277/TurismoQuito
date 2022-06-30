@@ -14,7 +14,7 @@ export class FirestoreService {
   }
 
   getCollection<tipo>(path: string, type: string) {
-    if (type === 'todos') {
+    if (type === 'Todo') {
       const collection = this.database.collection(path);
       return collection.valueChanges();
     } else {

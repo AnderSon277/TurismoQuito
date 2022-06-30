@@ -85,15 +85,17 @@ export class Tab2Page implements OnInit {
           buttons: ['OK'],
         });
         await alert.present();
+        this.credentialForm.reset();
       },
       async (err) => {
         loading.dismiss();
         const alert = await this.alertController.create({
-          header: 'failed send the form',
+          header: 'Error',
           message: err.message,
           buttons: ['OK'],
         });
         await alert.present();
+        this.credentialForm.reset();
       }
     );
   }

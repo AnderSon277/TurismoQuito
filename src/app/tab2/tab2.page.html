@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Registrar sitio turístico </ion-title>
+    <ion-title> Registrar Sitio Turístico </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -32,19 +32,20 @@
           (ionCancel)="pushLog('ionCancel fired')"
           (ionDismiss)="pushLog('ionDismiss fired')"
         >
-          <ion-select-option value="restaurantes"
+          <ion-select-option value="Iglesias">Iglesias</ion-select-option>
+          <ion-select-option value="Parques">Parques</ion-select-option>
+          <ion-select-option value="Restaurantes"
             >Restaurantes</ion-select-option
           >
-          <ion-select-option value="iglesias">Iglesias</ion-select-option>
-          <ion-select-option value="parques">Parques</ion-select-option>
+          <ion-select-option value="Miradores">Miradores</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
 
     <ion-item>
-      <ion-label class="normal"> Ubicación </ion-label>
+      <ion-label class="normal"> Seleccionar Ubicación </ion-label>
       <ion-buttons slot="end">
-        <ion-button (click)="addDirection()">
+        <ion-button (click)="addUbication()">
           <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
         </ion-button>
       </ion-buttons>

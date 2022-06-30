@@ -14,15 +14,16 @@
   <ion-list>
     <ion-item>
       <ion-select
-        placeholder="¿Qué deseas visitar?"
+        placeholder="Seleccione alguno"
         (ionChange)="handleChange($event)"
         (ionCancel)="pushLog('ionCancel fired')"
         (ionDismiss)="pushLog('ionDismiss fired')"
       >
-        <ion-select-option value="restaurantes">Restaurantes</ion-select-option>
-        <ion-select-option value="iglesias">Iglesias</ion-select-option>
-        <ion-select-option value="parques">Parques</ion-select-option>
-        <ion-select-option value="todos">Todos</ion-select-option>
+        <ion-select-option value="Iglesias">Iglesias</ion-select-option>
+        <ion-select-option value="Parques">Parques</ion-select-option>
+        <ion-select-option value="Restaurantes">Restaurantes</ion-select-option>
+        <ion-select-option value="Miradores">Miradores</ion-select-option>
+        <ion-select-option value="Todo">Todo</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
@@ -35,12 +36,10 @@
       <ion-card-subtitle>Categoría: {{place.type}}</ion-card-subtitle>
       <ion-card-title> {{place.name}} </ion-card-title>
     </ion-card-header>
-
     <ion-card-content> {{place.description}} </ion-card-content>
-
-    <ion-item href="#">
-      <ion-icon name="trash-outline" slot="start"></ion-icon>
-      <ion-label>Eliminar</ion-label>
-    </ion-item>
+    <ion-button (click)="openMap(place.ubication)" color="light">
+      <ion-icon name="location"></ion-icon>
+      Ver ubicación
+    </ion-button>
   </ion-card>
 </ion-content>

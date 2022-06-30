@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import { Component } from '@angular/core';
-import { AlertController, LoadingController } from '@ionic/angular';
+import {
+  AlertController,
+  LoadingController,
+  ModalController,
+} from '@ionic/angular';
 import { Place } from '../models';
+import { GooglemapsComponent } from '../googlemaps/googlemaps.component';
 import { FirestoreService } from '../services/firestore.service';
 
 @Component({
@@ -17,7 +22,8 @@ export class Tab3Page {
   constructor(
     private firestoreService: FirestoreService,
     private loadingController: LoadingController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private modalController: ModalController
   ) {}
 
   pushLog(msg) {
@@ -47,5 +53,15 @@ export class Tab3Page {
         await alert.present();
       }
     );
+  }
+
+  async openMap(positionInput) {
+    const modalAdd = await this.modalController.create({
+      component: GooglemapsComponent,
+      mode: 'ios',
+      swipeToClose: true,
+      componentProps: { position: positionInput },
+    });
+    await modalAdd.present();
   }
 }
