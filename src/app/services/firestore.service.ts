@@ -13,6 +13,11 @@ export class FirestoreService {
     return collection.doc().set(data);
   }
 
+  createUser(data: any, path: string, id: string) {
+    const collection = this.database.collection(path);
+    return collection.doc(id).set(data);
+  }
+
   getCollection<tipo>(path: string, type: string) {
     if (type === 'Todo') {
       const collection = this.database.collection(path);
@@ -23,5 +28,10 @@ export class FirestoreService {
       );
       return collection.valueChanges();
     }
+  }
+
+  getDoc(path: string, id: string) {
+    const collection = this.database.collection(path);
+    return collection.doc(id).valueChanges();
   }
 }

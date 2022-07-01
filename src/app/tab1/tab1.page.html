@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title> App Quito-Turismo </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large"> App Quito-Turismo</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-content *ngIf="login === false">
+    <h1 class="titulo">Bienvenidos a la Carita de Dios</h1>
+    <ion-item
+      ><ion-img
+        class="imagen"
+        src="http://sentiargentina.com/wp-content/uploads/2016/05/Logo-Quito-Turismo-ok.jpg"
+      ></ion-img>
+    </ion-item>
+  </ion-content>
+  <ion-button
+    *ngIf="login === true"
+    (click)="logout()"
+    class="ion-text-end"
+    color="light"
+  >
+    <ion-icon name="log-out">Salir</ion-icon>
+  </ion-button>
 </ion-content>

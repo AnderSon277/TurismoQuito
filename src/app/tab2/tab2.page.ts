@@ -6,7 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from '../services/firestore.service';
-import { Place } from '../models';
+import { Place } from '../models/models';
 
 //Position default Quito
 let positionInput = {

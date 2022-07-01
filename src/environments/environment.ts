@@ -5,16 +5,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  ApiKeyGoogleMaps: 'AIzaSyA8iraM46fIMhqry2pzZ3rU7YLwunjGQLQ',
+  ApiKeyGoogleMaps: 'AIza----------------------------- api key',
   production: false,
   firebase: {
-    apiKey: "AIzaSyDhfbl5bQtd1HuMi5wD_fNervMuV5mxU-Y",
-    authDomain: "movilesapp2022.firebaseapp.com",
-    databaseURL: "https://movilesapp2022-default-rtdb.firebaseio.com",
-    projectId: "movilesapp2022",
-    storageBucket: "movilesapp2022.appspot.com",
-    messagingSenderId: "1054025814391",
-    appId: "1:1054025814391:web:02dde4e71dec0789525172"
+    apiKey: 'AIzaS--------------------------------------------Y',
+    authDomain: 'movilesapp---------------------.firebaseapp.com',
+    databaseURL: 'https://movilesapp2022----------------------------.com',
+    projectId: 'movilesapp------------',
+    storageBucket: 'movilesapp----------------------.com',
+    messagingSenderId: '****************',
+    appId: '***:***********:web:**********',
   },
 };
 

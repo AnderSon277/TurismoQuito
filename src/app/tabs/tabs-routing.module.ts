@@ -8,6 +8,18 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'login',
+        loadChildren: () =>
+          import('../login/login.module').then((m) => m.LoginPageModule),
+      },
+      {
+        path: 'register',
+        loadChildren: () =>
+          import('../register/register.module').then(
+            (m) => m.RegisterPageModule
+          ),
+      },
+      {
         path: 'tab1',
         loadChildren: () =>
           import('../tab1/tab1.module').then((m) => m.Tab1PageModule),
@@ -24,7 +36,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab2',
+        redirectTo: '/tabs/tab1',
         pathMatch: 'full',
       },
     ],
@@ -34,6 +46,16 @@ const routes: Routes = [
     redirectTo: '/tabs/tab1',
     pathMatch: 'full',
   },
+  /*{
+    path: 'login',
+    loadChildren: () =>
+      import('../login/login.module').then((m) => m.LoginPageModule),
+  },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('../register/register.module').then((m) => m.RegisterPageModule),
+  },*/
 ];
 
 @NgModule({

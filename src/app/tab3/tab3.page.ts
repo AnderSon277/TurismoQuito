@@ -5,7 +5,7 @@ import {
   LoadingController,
   ModalController,
 } from '@ionic/angular';
-import { Place } from '../models';
+import { Place } from '../models/models';
 import { GooglemapsComponent } from '../googlemaps/googlemaps.component';
 import { FirestoreService } from '../services/firestore.service';
 
