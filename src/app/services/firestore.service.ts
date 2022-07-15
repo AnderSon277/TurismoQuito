@@ -30,7 +30,7 @@ export class FirestoreService {
     }
   }
 
-  getDoc(path: string, id: string) {
+  getDoc<tipo>(path: string, id: string) {
     const collection = this.database.collection(path);
     return collection.doc(id).valueChanges();
   }

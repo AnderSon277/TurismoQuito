@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { FirestoreService } from '../services/firestore.service';
+import {UserI} from '../models/models';
 
 @Component({
   selector: 'app-tab1',
@@ -26,7 +27,7 @@ export class Tab1Page {
         console.log(this.login);
         console.log('uid', userlogin.uid);
         this.firestoreService
-          .getDoc('Usuarios/', userlogin.uid)
+          .getDoc<UserI>('Usuarios', userlogin.uid)
           .subscribe((res: any) => {
             console.log('res', res);
             this.rol = res.rol;
