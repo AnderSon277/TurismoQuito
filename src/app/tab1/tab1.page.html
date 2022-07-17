@@ -2,12 +2,9 @@
   <ion-toolbar>
     <ion-title> App Quito-Turismo </ion-title>
     <ion-buttons>
-      <ion-button
-      *ngIf="login == true"
-      (click)="logout()"
-    >
-      <ion-icon name="log-out">Salir</ion-icon>
-    </ion-button>
+      <ion-button *ngIf="login === true" (click)="logout()">
+        Salir <ion-icon name="log-out"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -31,28 +28,37 @@
 
   <ion-content>
     <h1 class="titulo">Bienvenidos a la Carita de Dios</h1>
-    <ion-card *ngIf="login == true && (rol == 'Turista' || rol == 'Admin')">
+    <ion-card *ngIf="login === true && rol === 'Turista'">
       <ion-card-header>
-        <ion-img src="../../assets/QuitoTurista.jpg"></ion-img>
+        <ion-img
+          src="https://visitquito.ec/wp-content/uploads/Imagen-Inicio-100.jpg"
+        ></ion-img>
         <ion-card-subtitle>Quito y sus valles</ion-card-subtitle>
         <ion-card-title>BIENVENIDO TURISTA </ion-card-title>
       </ion-card-header>
-    
+
       <ion-card-content>
-        Guarda la ubiicación de tus lugares favoritos de la cuidad de Quito la carita de Dios.
+        Explora y visita los lugares más icónicos de la carita de dios.
       </ion-card-content>
     </ion-card>
-  
-    <ion-card *ngIf="login == true && (rol == 'Propietario' || rol == 'Admin')">
+
+    <ion-card *ngIf="login === true && rol === 'Propietario' ">
       <ion-card-header>
-        <ion-img src="../../assets/QuitoPropietario.jpg"></ion-img>
+        <ion-img
+          src="https://miviaje.com/wp-content/uploads/2019/01/centro-historico-quito.jpg"
+        ></ion-img>
         <ion-card-subtitle>Centro de Quito</ion-card-subtitle>
         <ion-card-title>BIENVENIDO PROPIETARIO </ion-card-title>
       </ion-card-header>
-    
+
       <ion-card-content>
-        Se parte del turismo en Quito mostrando tu arte en todos los sentidos.
+        Se parte del turismo en Quito. Publica tu lugar turístico en nuestra
+        app.
       </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="login === true && rol === 'Admin' ">
+      <h1>MODO ADMINISTRADOR</h1>
     </ion-card>
   </ion-content>
 </ion-content>

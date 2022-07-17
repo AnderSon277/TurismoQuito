@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,28 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class FirestoreService {
   constructor(public database: AngularFirestore) {}
 
-  createDoc(data: any, path: string) {
+  async createDoc(data: any, path: string) {
     const collection = this.database.collection(path);
+    try {
+      const respuesta = await fetch(environment.ApiSheetUrl, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          Nombre: data.name,
+          Descripción: data.description,
+          Tipo: data.type,
+          Lat: data.ubication.lat,
+          Lng: data.ubication.lng,
+        }),
+      });
+      const contenido = await respuesta.json();
+      console.log('Contenido', contenido);
+    } catch (error) {
+      console.log(error);
+    }
     return collection.doc().set(data);
   }
 
