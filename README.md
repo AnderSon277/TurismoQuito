@@ -1,20 +1,21 @@
 # TURISMO QUITO
+
 Ejemplo de aplicativo para fomentar el turismo en Quito implementado con Ionic and Angular
 
 funcionamiento --> https://youtu.be/WstKUq3LVc8  
 <br />
 
-
 ![Vista del Home](./src/assets/Home.JPG)
 <br />
 
-### App Ionic Angular incluye: 
-* Geolocation
-* Routes Protection
-* Ionicons
-* Navigation
-* Register
-* Login 
+### App Ionic Angular incluye:
+
+- Geolocation
+- Routes Protection
+- Ionicons
+- Navigation
+- Register
+- Login
 
 ### To run
 
@@ -22,11 +23,12 @@ funcionamiento --> https://youtu.be/WstKUq3LVc8
 npm install
 ionic serve
 ```
+
 <br />
 Nota : Debe tener una API activa para GoogleMaps ,GoogleSheet & Firebase 
 <br />
 
-## Register 
+## Register
 
 <br />
 En el registro se puede elegir el rol (Turista o Propietario) 
@@ -35,12 +37,12 @@ En el registro se puede elegir el rol (Turista o Propietario)
 ![Register](./src/assets/Register.JPG)
 <br />
 
-## Login 
+## Login
 
 ![Login](./src/assets/Login.JPG)
 <br />
 
-## View User Propietario 
+## View User Propietario
 
 ![Vista Propietario](./src/assets/ViewPropietario.JPG)
 
@@ -57,7 +59,7 @@ Registro de ubicacion del sitio con GooglesMaps
 ![Seleccion Ubicacion](./src/assets/ViewSelectUbication.JPG)
 <br />
 
-## View User Turista 
+## View User Turista
 
 ![Vista Turista](./src/assets/ViewTurista.JPG)
 
@@ -78,19 +80,18 @@ Vizualizar ubicacion el sitio con GooglesMaps
 ![Seleccion Ubicacion](./src/assets/ViewUbication.JPG)
 <br />
 
-
 ## View Admin
 
-El admin puede realizar todas las acciones del usuario turista y propietario y más 
+El admin puede realizar todas las acciones del usuario turista y propietario y más
 <br />
 ![Vista Admin](./src/assets/ViewAdmin.JPG)
 
-## Datos 
+## Datos
 
-Datos Respaldados en Firebase 
+Datos Respaldados en Firebase
 <br />
 ![Datos Firebase](./src/assets/SavePlacesFirebase.JPG)
 
 Datos Respaldados en Hoja de Cálculo de GoogleDrive
 <br />
-![Datos GoogleSheets](./src/assets/SaveGoogleSheets.JPG)
+![Datos GoogleSheets](./src/assets/SavePlacesGoogleSheets.JPG)
