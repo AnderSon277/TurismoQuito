@@ -1,10 +1,12 @@
 # TURISMO QUITO
 Ejemplo de aplicativo para fomentar el turismo en Quito implementado con Ionic and Angular
+
+funcionamiento --> https://youtu.be/WstKUq3LVc8  
 <br />
 
 
 ![Vista del Home](./src/assets/Home.JPG)
-
+<br />
 
 ### App Ionic Angular incluye: 
 * Geolocation
@@ -26,10 +28,12 @@ Nota : Debe tener una API activa para GoogleMaps ,GoogleSheet & Firebase
 
 ## Register 
 
+<br />
 En el registro se puede elegir el rol (Turista o Propietario) 
 <br />
 
 ![Register](./src/assets/Register.JPG)
+<br />
 
 ## Login 
 
@@ -80,3 +84,13 @@ Vizualizar ubicacion el sitio con GooglesMaps
 El admin puede realizar todas las acciones del usuario turista y propietario y más 
 <br />
 ![Vista Admin](./src/assets/ViewAdmin.JPG)
+
+## Datos 
+
+Datos Respaldados en Firebase 
+<br />
+![Datos Firebase](./src/assets/SavePlacesFirebase.JPG)
+
+Datos Respaldados en Hoja de Cálculo de GoogleDrive
+<br />
+![Datos GoogleSheets](./src/assets/SaveGoogleSheets.JPG)
